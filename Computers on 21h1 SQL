@@ -1,0 +1,10 @@
+SELECT DISTINCT
+    CS.Name0 AS 'Computer Name',
+    CS.UserName0 AS 'Username',
+    OS.Caption0 AS 'Operating System',
+    OS.Version0 AS 'Version'
+FROM
+    v_GS_COMPUTER_SYSTEM CS
+    JOIN v_GS_OPERATING_SYSTEM OS ON CS.ResourceID = OS.ResourceID
+WHERE
+    OS.Version0 LIKE '10.0.19044.%' -- Version number for Windows 21H2
